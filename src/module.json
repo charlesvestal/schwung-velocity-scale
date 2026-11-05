@@ -2,7 +2,7 @@
   "id": "velocity_scale",
   "name": "Velocity Scale",
   "abbrev": "VS",
-  "version": "0.3.0",
+  "version": "0.4.0",
   "capabilities": {
     "chainable": true,
     "component_type": "midi_fx",
@@ -11,6 +11,26 @@
         "root": {
           "name": "Velocity Scale",
           "params": [
+            {
+              "key": "input_min",
+              "short_name": "In Min",
+              "name": "Input Min",
+              "type": "int",
+              "min": 1,
+              "max": 127,
+              "default": 1,
+              "step": 1
+            },
+            {
+              "key": "input_max",
+              "short_name": "In Max",
+              "name": "Input Max",
+              "type": "int",
+              "min": 1,
+              "max": 127,
+              "default": 127,
+              "step": 1
+            },
             {
               "key": "min",
               "short_name": "Min",
@@ -54,12 +74,39 @@
                 "Harder"
               ],
               "default": 0
+            },
+            {
+              "level": "monitor",
+              "label": "Monitor"
             }
           ],
           "knobs": [
             "min",
             "max",
-            "curve"
+            "curve",
+            "input_min",
+            "input_max"
+          ]
+        },
+        "monitor": {
+          "name": "Monitor",
+          "params": [
+            { "key": "mon_in_last", "short_name": "In", "name": "Input Last", "type": "int", "min": 0, "max": 127, "step": 1, "access": "read" },
+            { "key": "mon_in_lo", "short_name": "In Lo", "name": "Input Lowest", "type": "int", "min": 0, "max": 127, "step": 1, "access": "read" },
+            { "key": "mon_in_hi", "short_name": "In Hi", "name": "Input Highest", "type": "int", "min": 0, "max": 127, "step": 1, "access": "read" },
+            { "key": "mon_out_last", "short_name": "Out", "name": "Output Last", "type": "int", "min": 0, "max": 127, "step": 1, "access": "read" },
+            { "key": "mon_out_lo", "short_name": "OutLo", "name": "Output Lowest", "type": "int", "min": 0, "max": 127, "step": 1, "access": "read" },
+            { "key": "mon_out_hi", "short_name": "OutHi", "name": "Output Highest", "type": "int", "min": 0, "max": 127, "step": 1, "access": "read" },
+            { "key": "mon_reset", "short_name": "Reset", "name": "Reset Monitor", "type": "enum", "options": ["-", "Reset!"], "access": "write" }
+          ],
+          "knobs": [
+            "mon_in_last",
+            "mon_in_lo",
+            "mon_in_hi",
+            "mon_out_last",
+            "mon_out_lo",
+            "mon_out_hi",
+            "mon_reset"
           ]
         }
       }

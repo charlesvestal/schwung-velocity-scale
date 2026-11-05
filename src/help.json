@@ -25,6 +25,15 @@
         " highest output vel",
         "Knob 3: Curve",
         " bend soft<->hard",
+        "Knob 4: In Min",
+        " softest hit used",
+        "Knob 5: In Max",
+        " hardest hit used",
+        "",
+        "In Min/Max: hits",
+        "below In Min give",
+        "Min, above In Max",
+        "give Max.",
         "",
         "Min/Max set the",
         "output range,",
@@ -61,6 +70,25 @@
       ]
     },
     {
+      "title": "Monitor",
+      "lines": [
+        "Shows the velocity",
+        "of every note:",
+        " In  = from keyboard",
+        " Out = after scaling",
+        "Last, lowest and",
+        "highest since the",
+        "last Reset. 0 means",
+        "no note yet.",
+        "",
+        "Play soft and hard",
+        "to find the range",
+        "your keyboard really",
+        "sends, then set",
+        "In Min / In Max."
+      ]
+    },
+    {
       "title": "MIDI",
       "lines": [
         "Processes Note On",
@@ -69,10 +97,10 @@
         "Note Off (vel 0) is",
         "never changed.",
         "",
-        "Order: curve, then",
-        "linear scale, then",
-        "round + clamp to",
-        "1-127."
+        "Order: input range,",
+        "curve, then linear",
+        "scale, then round.",
+        "Output is 1-127."
       ]
     }
   ]
